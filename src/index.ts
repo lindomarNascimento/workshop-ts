@@ -1,6 +1,18 @@
 import hello from './module/hello'
-import test from './module/qtdButtons'
+import qtdButtons from './module/qtdButtons'
 
-hello()
+// import EplusUtils from './module/element'
+// hello('Hellou world')
 
-test('more','minus', 'number')
+// test('more','minus', 'number')
+
+// EplusUtils.
+
+
+const propsQtdButtons = { 
+    btnMore:'more', 
+    btnMinus:'minus', 
+    qtyInput:'number' 
+}
+
+qtdButtons(propsQtdButtons)

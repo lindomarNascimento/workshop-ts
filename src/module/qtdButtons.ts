@@ -1,7 +1,9 @@
-const qtdButtons = (btnMore: string, btnMinus: string, qtyInput: string) => {
-    const $btnMore: HTMLButtonElement | null = document.querySelector(`.${btnMore}`)
-    const $btnMinus: HTMLButtonElement | null = document.querySelector(`.${btnMinus}`)
-    const $qtyInput = (<HTMLInputElement>document.querySelector(`.${qtyInput}`))
+import { qtdButtonsProps } from '../interface'
+
+const qtdButtons = ({btnMore, btnMinus, qtyInput}: qtdButtonsProps) => {
+    const $btnMore = document.querySelector<HTMLButtonElement>(`.${btnMore}`)
+    const $btnMinus = document.querySelector<HTMLButtonElement>(`.${btnMinus}`)
+    const $qtyInput = (document.querySelector(`.${qtyInput}`)) as HTMLInputElement
 
     let qtdNumber = Number($qtyInput.value)
 
@@ -11,11 +13,14 @@ const qtdButtons = (btnMore: string, btnMinus: string, qtyInput: string) => {
     })
 
     $btnMore?.addEventListener('click', () => {
+        console.log('certin')
         qtdNumber += 1   
         $qtyInput.value = String(qtdNumber)
     })
 
     $btnMinus?.addEventListener('click', () => {
+        console.log('certin')
+
         if (qtdNumber > 1) {
             qtdNumber -= 1
             $qtyInput.value = String(qtdNumber)
