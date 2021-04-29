@@ -1,4 +1,4 @@
-import { Elementprops }from '../interface'
+import { Elementprops } from '../interface'
 
 const Element = ({
 	onClick,
@@ -36,7 +36,7 @@ const Element = ({
 	if (type) element.setAttribute('type', type)
 	if (src) element.setAttribute('src', src)
 	if (href) element.setAttribute('href', href)
-	if (id) element.idList.add(id)
+	if (id) element.id= id
 	if (hover) element.setAttribute('hover', 'true')
 	if (autoplay) element.setAttribute('autoplay', 'true')
 	if (loop) element.setAttribute('loop', 'true')
@@ -54,7 +54,7 @@ const Element = ({
 		element.classList.add('icones')
 	}
 	if (title) element.setAttribute('title', title)
-	if (value) element.value = value
+	if (value) element.setAttribute('value', value)
 	if (onClick) element.addEventListener('click', onClick)
 	if (dataValue) element.setAttribute('data-value', dataValue)
 
@@ -65,8 +65,8 @@ const Element = ({
 	return element
 }
 
-const _methods = (element) => {
-	element.triggerClick = (prop) => {
+const _methods = (element:any) => {
+	element.triggerClick = (prop:any) => {
 		const propType = typeof prop
 
 		const $elementTrigger = propType === 'string' ? document.querySelector(prop) : prop
